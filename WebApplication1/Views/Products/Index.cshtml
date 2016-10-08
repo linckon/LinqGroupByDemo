@@ -17,7 +17,9 @@
     <tbody>
        @foreach (var group in Model)
        {
-    <tr><th colspan="3">@group.CategoryId</th></tr>
+    <tr>
+        <th colspan="3">@group.CategoryId</th>
+    </tr>
            foreach (var book in group.ProductOptions)
            {
                <tr>

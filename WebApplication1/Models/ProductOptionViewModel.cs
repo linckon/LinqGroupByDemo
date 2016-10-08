@@ -1,11 +1,13 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace WebApplication1.Models
 {
     public class ProductOptionViewModel
     {
         public int? CategoryId { get; set; }
-        public IGrouping<int?, ProductOption> ProductOptions;
+        //public IGrouping<int?, ProductOption> ProductOptions;
+        public List<ProductOption> ProductOptions;
+
     }
     //public class Group<T, K>
     //{

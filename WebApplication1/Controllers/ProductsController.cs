@@ -46,7 +46,7 @@ namespace WebApplication1.Controllers
                     .Select(g => new ProductOptionViewModel
                     {
                         CategoryId = g.Key,
-                        ProductOptions = g
+                        ProductOptions = g.ToList()
                     });
             return query;
         }
