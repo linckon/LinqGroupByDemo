@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -37,7 +38,7 @@ namespace WebApplication1.Controllers
             return View(query.ToList());
         }
 
-        private IQueryable<ProductOptionViewModel> ProductOptionViewModels()
+        private IEnumerable<ProductOptionViewModel> ProductOptionViewModels()
         {
             var query =
                     db.ProductOptions
@@ -48,7 +49,8 @@ namespace WebApplication1.Controllers
                         CategoryId = g.Key,
                         ProductOptions = g.Select(x => x.Product)
                     });
-            return query;
+            var list = query.ToList();
+            return list;
         }
         //private IQueryable<Group<string, ProductOption>> ProductOptionViewModels()
         //{
