@@ -6,7 +6,7 @@ namespace WebApplication1.Models
     {
         public int? CategoryId { get; set; }
         //public IGrouping<int?, ProductOption> ProductOptions;
-        public List<ProductOption> ProductOptions;
+        public IEnumerable<Product> ProductOptions;
 
     }
     //public class Group<T, K>
